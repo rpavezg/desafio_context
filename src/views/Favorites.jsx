@@ -12,7 +12,7 @@ const Favorites = () => {
         if(personaje.id === id){
             return {
                 ...personaje, 
-                liked: !personaje.liked
+                liked: !personaje.like
             }
         }
         return personaje;
@@ -25,13 +25,13 @@ const Favorites = () => {
       <div className="App" >
         <h1>Natural Pic</h1>
         <Row xs={1} md={4} className="g-3 p-4">
-        {Personajes.filter((personaje)=> personaje.liked).map((personaje) => (
+        {Personajes.filter((personaje)=> personaje.like).map((personaje) => (
           <Col>
             <Card onClick={()=> quitarFavoritos(personaje.id)}>
-              <Card.Img className="object-fit-scale-down align-top" variant="top" src={personaje.image} alt={personaje.name} height="200px" />
+            <Card.Img variant="bottom" src={personaje.src.original} height="200px" />
               <Card.ImgOverlay>
-                <Card.Title className="text-left text-white">{personaje.name}</Card.Title >
-                <Card.Text className="text-white">Casa {personaje.house}</Card.Text>
+              <Card.Title className="text-end text-capitalize text-white text-shadow-sm">{personaje.photographer}</Card.Title >
+              <Card.Text className="text-end text-capitalize text-white">Casa {personaje.alt}</Card.Text>
 
               </Card.ImgOverlay>       
             </Card>
