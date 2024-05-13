@@ -3,6 +3,7 @@ import { PersonajesContext } from "../context/PersonajesContext";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import IconHeart from "../components/IconHeart";
 
 const Favorites = () => {
   const { Personajes, setPersonajes } = useContext(PersonajesContext);
@@ -12,7 +13,7 @@ const Favorites = () => {
         if(personaje.id === id){
             return {
                 ...personaje, 
-                liked: !personaje.like
+                like: !personaje.like
             }
         }
         return personaje;
@@ -30,9 +31,9 @@ const Favorites = () => {
             <Card onClick={()=> quitarFavoritos(personaje.id)}>
             <Card.Img variant="bottom" src={personaje.src.original} height="200px" />
               <Card.ImgOverlay>
+              <IconHeart filled={personaje.like}/>
               <Card.Title className="text-end text-capitalize text-white text-shadow-sm">{personaje.photographer}</Card.Title >
               <Card.Text className="text-end text-capitalize text-white">Casa {personaje.alt}</Card.Text>
-
               </Card.ImgOverlay>       
             </Card>
           </Col>
