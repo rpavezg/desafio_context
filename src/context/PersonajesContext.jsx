@@ -13,8 +13,8 @@ const PersonajesProvider = ({children}) => {
                     throw new Error("Error al obtener los datos");
                 }
                 const data = await response.json();
-                setPersonajes(data);
-                console.log("Datos de las imagenes:",data);
+                setPersonajes(data.photos);
+                console.log("Datos de las imagenes:",data.photos);
             } catch (error) {
                 console.error("Error al obtener los datos:", error);
             }
