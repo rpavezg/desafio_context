@@ -23,7 +23,7 @@ const Favorites = () => {
 
     return (
       <div className="App" >
-        <h1>Personajes Favoritos</h1>
+        <h1>Natural Pic</h1>
         <Row xs={1} md={4} className="g-3 p-4">
         {Personajes.filter((personaje)=> personaje.liked).map((personaje) => (
           <Col>
