@@ -28,11 +28,12 @@ const Gallery = () => {
     {Personajes.map((personaje, i) => (
           <Col key={i}>
             <Card onClick={()=> agregarFavoritos(personaje.id)}>
-              <Card.Img className="object-fit-scale-down align-top" variant="top" src={personaje.url} height="200px" />
+              <Card.Img variant="bottom" src={personaje.src.original} height="200px" />
               <Card.ImgOverlay>
-                <Card.Title className="text-left text-white">{personaje.photographer}</Card.Title >
-                <Card.Text className="text-white">Casa {personaje.alt}</Card.Text>
                 <IconHeart filled={personaje.like}/>
+                <Card.Title className="text-end text-capitalize text-white text-shadow-sm">{personaje.photographer}</Card.Title >
+                <Card.Text className="text-end text-capitalize text-white">Casa {personaje.alt}</Card.Text>
+                
               </Card.ImgOverlay>
               
             </Card>
