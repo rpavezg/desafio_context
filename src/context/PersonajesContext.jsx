@@ -22,7 +22,7 @@ const PersonajesProvider = ({children}) => {
             fetchData();
             }, []);
             return (
-            <PersonajesContext.Provider value={{Personajes}}>
+            <PersonajesContext.Provider value={{Personajes, setPersonajes}}>
             {children}
             </PersonajesContext.Provider>    
     );
